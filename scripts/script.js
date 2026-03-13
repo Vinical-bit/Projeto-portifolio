@@ -3,23 +3,23 @@ const body = document.body;
 
 // Persistência do tema
 const temasalvo = localStorage.getItem('tema');
-temaEscuro(temasalvo === 'escuro');
+temaEscuro(temasalvo === 'dark');
 
 // Função para alternar entre tema claro e escuro
 function temaEscuro(tipo) {
   if (tipo == true) {
-    body.classList.add('escuro');
+    body.classList.add('dark');
     botao.innerHTML = '<i class="fa-solid fa-sun"></i>';
   } else {
-    body.classList.remove('escuro');
+    body.classList.remove('dark');
     botao.innerHTML = '<i class="fa-solid fa-moon"></i>';
   }
 }
 
 botao.addEventListener('click', () => {
-  const isescuro = body.classList.toggle('escuro');
+  const isescuro = body.classList.toggle('dark');
   temaEscuro(isescuro);
-  localStorage.setItem('tema', isescuro ? 'escuro' : 'claro');
+  localStorage.setItem('tema', isescuro ? 'dark' : 'claro');
 });
 
 // Scroll suave para links de navegação
