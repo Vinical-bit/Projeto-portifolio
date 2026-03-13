@@ -31,6 +31,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
   nav#menu ul{
@@ -156,6 +159,9 @@ article h2{
   height: 100%;
   border-radius: 4px;
 }
+#skill-container .progresso:hover{
+  background-color: var(--destaque);
+}
 
 .item{
     transition: transform 0.5s ease;
@@ -229,12 +235,38 @@ article h2{
   overflow: hidden;
 }
 
-.cordel{
-  
+.pj{
+  text-decoration: none;
+  color: var(--destaque-inverso);
+  background-color: var(--texto);
+  border-radius: 5px;
+  padding: 0px 5px;
 }
 
+/*
+#df{
+  object-fit: contain;
+  object-position: right;
+}
+*/
 
 @media screen and (min-width:768px) {
+  main{
+    grid-template-columns: auto 300px 1fr auto;
+  }
+  
+  section#ficha{
+    grid-column: 2/3 ;
+    height: fit-content;
+    position: sticky;
+    top: 65px;
+  }
+
+  section#detalhes{
+      grid-column: 3/-1;
+  }
+  
+  
   #skill-container{
     grid-template-columns: 1fr 1fr ;
   }
@@ -256,3 +288,21 @@ article h2{
   
 
 }
+
+footer{
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  text-align: center;
+  padding: 15px;
+}
+
+footer a{
+  text-decoration: none;
+  color: var(--texto-inverso);
+  font-weight: bold;
+}
+
+footer a:hover{
+  color: var(--destaque-inverso);
+}
+
